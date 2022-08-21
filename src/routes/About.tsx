@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function About() {
+    const navigate = useNavigate();
     return (
         <>
             <main>
@@ -9,6 +10,7 @@ export default function About() {
             </main>
             <nav>
                 <Link to="/">Home</Link>
+                <input type="button" value="回首頁" onClick={() => navigate("/")} />
             </nav>
         </>
     );
