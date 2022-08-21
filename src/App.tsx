@@ -1,23 +1,16 @@
 import { Routes, Route } from "react-router-dom";
-import About from "./routes/About";
-import Home from "./routes/Home";
-import Layout from "./routes/Layout";
-import List from "./routes/List";
+import Home from "./views/Home";
+import Layout from "./views/Layout";
+import List from "./views/List";
 
 export default function App() {
     return (
-        <div>
-            <header>
-                <h1>Welcome to React Router!</h1>
-            </header>
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path=":id" element={<List />} />
-                    <Route path="*" element={<h2>無此路徑</h2>} />
-                </Route>
-            </Routes>
-        </div>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/list" element={<List />} />
+                <Route path="*" element={<h1>無此路徑</h1>} />
+            </Route>
+        </Routes>
     );
 }
