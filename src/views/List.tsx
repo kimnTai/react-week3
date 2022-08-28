@@ -17,18 +17,16 @@ export default function List() {
     return (
         <div className="container">
             <div className="row">
-                {data.map(({ Id, Name, Picture1 }) => {
-                    return (
-                        <Link to={`/${Id}`} key={Id} className="col-3">
-                            <div className="card">
-                                <img src={Picture1} className="card-img-top" />
-                                <div className="card-body">
-                                    <p className="card-text">{Name}</p>
-                                </div>
+                {data.map(({ Id, Name, Picture1 }) => (
+                    <Link to={`/${Id}`} key={Id} className="col-3">
+                        <div className="card">
+                            <img className="card-img-top" height={150} src={Picture1} />
+                            <div className="card-body">
+                                <p className="card-text">{Name}</p>
                             </div>
-                        </Link>
-                    );
-                })}
+                        </div>
+                    </Link>
+                ))}
             </div>
         </div>
     );
